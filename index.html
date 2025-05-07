@@ -707,11 +707,10 @@
 
         // Mendapatkan nama tamu dari URL
         const guestName = getQueryParam("nama-tamu");
-
-        if (guestName) {
-            // Jika ada nama tamu dalam URL, tampilkan
-            document.getElementById("guest-name").textContent = guestName;
-        }
+console.log(guestName); // Untuk memastikan nilai parameter dibaca
+if (guestName) {
+    document.getElementById("guest-name").textContent = guestName;
+}
 </script>
 
 </body>
