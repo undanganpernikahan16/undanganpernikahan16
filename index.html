@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Pernikahan Ryan & Fira">
-  <meta property="og:title" content="Pernikahan Ryan & Fira">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Undangan Pernikahan</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
@@ -137,6 +135,29 @@
       display: block;
     }
 
+    .new {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      margin: 0 auto;
+      overflow-y: auto;
+      transition: opacity 1s ease, transform 1s ease;
+      background: linear-gradient(to bottom, #9c9a92, #ffffff); /* Gradasi dari kuning ke oranye */
+      animation: fadeIn 1.2s ease;
+    }
+
+    .copyright {
+      text-align: center;
+      display: none;
+    }
+
+    .copyright.active {
+      display: block;
+    }
+
     .card {
       background: linear-gradient(135deg, rgba(141, 126, 126, 0.8), rgba(245, 233, 247, 0.8)),
               url('img/header.jpg') center/cover no-repeat;
@@ -159,6 +180,13 @@
               url('img/background.jpg') center/cover no-repeat;
     border-radius: 0px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .akhir-card {
+    background: linear-gradient(135deg, rgba(141, 126, 126, 0.8), rgba(245, 233, 247, 0.8));
+    border-radius: 0px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: -20px 0px 0px 0px;
   }
 
     /* Card Akad Nikah */
@@ -602,11 +630,33 @@
   </div>
 </div>
 
+<div class="new copyright" id="copyright">
+  <div class="card akhir-card">
+    <h3 style="font-size: 12px; font-family: Great Vibes; color: #fff;">
+      Design by: Arjuna Arrasyid
+    </h3>
+    <div class="social-icons" style="margin-top: 8px;">
+      <a href="https://instagram.com/junancok" target="_blank" style="margin: 0 10px; color: #fff;">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/+62881024677391" target="_blank" style="margin: 0 10px; color: #fff;">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://facebook.com/" target="_blank" style="margin: 0 10px; color: #fff;">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
 
 <script>
   function showInvitation() {
     document.getElementById("cover").style.display = "none";
     document.getElementById("detail").classList.add("active");
+    document.getElementById("copyright").classList.add("active");
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -707,10 +757,10 @@
 
         // Mendapatkan nama tamu dari URL
         const guestName = getQueryParam("nama-tamu");
-console.log(guestName); // Untuk memastikan nilai parameter dibaca
-if (guestName) {
-    document.getElementById("guest-name").textContent = guestName;
-}
+        console.log(guestName); // Untuk memastikan nilai parameter dibaca
+        if (guestName) {
+            document.getElementById("guest-name").textContent = guestName;
+        }
 </script>
 
 </body>
