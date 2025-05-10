@@ -32,7 +32,7 @@
       margin: 0 auto;
       overflow-y: auto;
       transition: opacity 1s ease, transform 1s ease;
-      background: linear-gradient(to bottom, #EDCECC, #DFB2B5); /* Gradasi dari kuning ke oranye */
+      background: linear-gradient(to bottom, #000000, #ffffff); /* Gradasi dari kuning ke oranye */
       animation: fadeIn 1.2s ease;
     }
 
@@ -103,7 +103,7 @@
     .btn, .calendar-btn, .maps-btn {
       background: linear-gradient(135deg, #fefefe, #f3e5f5);
       border: 1px solid #d1b3d6;
-      color: #4a148c;
+      color: #000000;
       font-weight: bold;
     }
 
@@ -205,12 +205,16 @@
 
   .akad-nikah-card .countdown-box {
     display: flex;
-    justify-content: space-around;
+    .info-box hr {
+  border: none;
+  border-top: 1.5px solid #ccc;
+  margin: 10px 0;
+}  justify-content: space-around;
     margin-bottom: 15px;
   }
 
   .akad-nikah-card .calendar-btn {
-    background: #f1c3d4;
+    background: #ffffff;
     border: none;
     padding: 12px 25px;
     font-weight: bold;
@@ -219,12 +223,13 @@
   }
 
   .akad-nikah-card .calendar-btn:hover {
-    background-color: #f8c1d0;
+    background-color: #ffffff;
   }
 
   .akad-nikah-card .info-box {
-    background: #fff;
+    background-color: rgba(255, 255, 255, 0.6); /* putih dengan 85% opacity */
     padding: 20px;
+    border-radius: 20px;
   }
 
   /* Card Konfirmasi Kehadiran */
@@ -245,7 +250,7 @@
   }
 
   .konfirmasi-kehadiran button {
-    background: #f1c3d4;
+    background: #000000;
     border: none;
     padding: 10px 20px;
     border-radius: 30px;
@@ -255,7 +260,7 @@
   }
 
   .konfirmasi-kehadiran button:hover {
-    background: #f8c1d0;
+    background: #000000;
   }
 
   /* Card Ucapan & Do'a */
@@ -277,7 +282,7 @@
   }
 
   .ucapan-dan-doa button {
-    background: #f1c3d4;
+    background: #000000;
     border: none;
     padding: 12px 20px;
     border-radius: 30px;
@@ -287,7 +292,7 @@
   }
 
   .ucapan-dan-doa button:hover {
-    background: #f8c1d0;
+    background: #000000;
   }
 
   .ucapan-dan-doa .msg-bubble {
@@ -342,7 +347,6 @@
       font-family: 'Great Vibes', cursive;
       font-size: 34px;
       color: #000;
-      margin-bottom: 16px;
       letter-spacing: 1px;
     }
 
@@ -477,7 +481,6 @@
 }
 
 .section-title {
-  font-family: 'Playfair Display', serif;
   font-size: 28px;
   color: #333;
   margin-bottom: 10px;
@@ -490,7 +493,7 @@
 }
 
 .gift-card {
-  background: linear-gradient(135deg, #d4d4d4, #b0b0b0);
+  background: linear-gradient(135deg, #0066AE, #d4d4d4);
   color: #fff;
   border-radius: 16px;
   padding: 20px;
@@ -542,10 +545,15 @@
 }
 
 .gallery-title {
-  font-family: 'Playfair Display', serif;
   font-size: 28px;
   margin-bottom: 20px;
   color: #333;
+}
+
+.info-box hr {
+  border: none;
+  border-top: 1px solid #000000;
+  margin: 10px 0;
 }
 
 .gallery-grid {
@@ -566,6 +574,22 @@
 .gallery-grid img:hover {
   transform: scale(1.03);
 }
+
+#musicBtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#musicBtn:hover {
+  background-color: #45a049;
+}
+
 
 
 
@@ -618,10 +642,12 @@
   </style>
 </head>
 <body>
-  <audio id="bgMusic" loop>
-    <source src="img/lagu.mp3" type="audio/mpeg">
+  <audio id="bgMusic" autoplay loop>
+    <source src="img/ratna.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
   </audio>
-<!-- Section Cover -->
+
+<!-- Section C8over -->
 <div class="section invitation" id="cover">
   <div class="content">
     <h2>The Wedding of</h2>
@@ -640,18 +666,19 @@
 <!-- Section Detail -->
 <div class="section detail" id="detail">
   <div class="card">
-    <img src="img/daun.svg" alt="Daun Dekoratif" style="width: 60px; margin-bottom: 30px;">
+    <img src="img/pinus.png" alt="Daun Dekoratif" style="width: 60px; margin-bottom: 30px;">
     <h2 class="arabic">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
     <p class="rahmat">Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala, insyaaAllah kami akan menyelenggarakan acara pernikahan:</p>
     <div class="nama-pria">Riyan Afrizal</div>
-    <div class="orang-tua"><b>Putra Kedua dari:</b><br>Bapak Rachman & Ibu Yuli Rodita</div>
+    <!-- <a href="https://instagram.com/junancok" style="color: #666;"><i class="fab fa-instagram"></i></a> -->
+    <div class="orang-tua"><b>Putra Kedua dari:</b><br>Bapak Rachman & Alm. Ibu Yuli Rodita</div>
     <div class="heart">❤</div>
     <div class="nama-wanita">Shafira</div>
-    <div class="orang-tua"><b>Putri dari:</b><br>Bapak Usep & Ibu Ai</div>
+    <div class="orang-tua"><b>Putri Pertama dari:</b><br>Alm. Bapak Usep & Ibu Ai</div>
   </div>
 
   <div class="akad-nikah-card card hidden">
-    <div class="countdown-title">Hitung Mundur Acara</div>
+    <div class="countdown-title" style="color: #fff;">Hitung Mundur Acara</div>
       <div class="countdown-box">
         <div class="count-item"><div id="days">0</div><small>Hari</small></div>
         <div class="count-item"><div id="hours">0</div><small>Jam</small></div>
@@ -661,11 +688,11 @@
       <button class="calendar-btn" onclick="addToGoogleCalendar()">📅 Simpan</button>
     <div class="info-box">
       <h3>AKAD NIKAH</h3>
-      <h1>-------------------</h1>
-      <div><strong>KAMIS</strong></div>
+      <hr>
+      <div><strong>SENIN</strong></div>
       <h1>16</h1>
-      <div><strong>JULI</strong><br>2025</div>
-      <h1>-------------------</h1>
+      <div><strong>JUNI</strong><br>2025</div>
+      <hr>
       <p style="font-size: 12px;">🕒 Pukul : 08.00 s/d 09.00</p>
       <div class="location">
         <strong>Lokasi Acara :</strong>
@@ -676,11 +703,11 @@
 
     <div class="info-box">
       <h3>RESEPSI PERNIKAHAN</h3>
-      <h1>-------------------</h1>
-      <div><strong>KAMIS</strong></div>
+      <hr>
+      <div><strong>SENIN</strong></div>
       <h1>16</h1>
-      <div><strong>JULI</strong><br>2025</div>
-      <h1>-------------------</h1>
+      <div><strong>JUNI</strong><br>2025</div>
+      <hr>
       <p style="font-size: 12px;">🕒 Pukul : 09.00 s/d Selesai</p>
       <div class="location">
         <strong>Lokasi Acara :</strong>
@@ -730,7 +757,7 @@
   </div>
 
   <section class="gift-section">
-    <h2 class="section-title">🎁 Wedding Gift</h2>
+    <h2 class="section-title">Wedding Gift</h2>
     <p class="section-desc">
       Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami, dapat melalui :
     </p>
@@ -738,15 +765,15 @@
     <div class="gift-card">
       <div class="gift-header">
         <h3>Wedding Gift</h3>
-        <span>Mandiri</span>
+        <span>BCA</span>
       </div>
-      <p class="gift-info"><strong>No. Rekening</strong><br>03123456789</p>
-      <button class="gift-button" onclick="window.open('https://wa.me/6281234567890?text=Halo, saya sudah melakukan transfer.', '_blank')">
-        💌 Konfirmasi Via WA
+      <p class="gift-info"><strong>No. Rekening</strong><br>7361204861</p>
+      <button class="gift-button" onclick="window.open('https://wa.me/+6286501899824?text=Halo, saya sudah melakukan transfer.', '_blank')">
+        <i class="fab fa-whatsapp"></i> Konfirmasi Via WA
       </button>
-      <p class="gift-name"><strong>Atas Nama</strong><br>FULAN SYAHPUTRA</p>
+      <p class="gift-name"><strong>Atas Nama</strong><br>MUHAMMAD RHIYAN APRIJAL</p>
     </div>
-  
+<!--   
     <div class="gift-card">
       <div class="gift-header">
         <h3>Wedding Gift</h3>
@@ -757,7 +784,7 @@
         💌 Konfirmasi Via WA
       </button>
       <p class="gift-name"><strong>Atas Nama</strong><br>FULANAH PUTRI</p>
-    </div>
+    </div> -->
   </section>
   
 
@@ -863,7 +890,7 @@
   }
 
   // Countdown
-  const targetDate = new Date("July 17, 2025 08:00:00").getTime();
+  const targetDate = new Date("June 20, 2025 08:00:00").getTime();
   const countdown = setInterval(() => {
     const now = new Date().getTime();
     const distance = targetDate - now;
@@ -882,6 +909,22 @@
       document.getElementById("seconds").innerText = seconds;
     }
   }, 1000);
+
+   // Beberapa browser butuh interaksi pengguna dulu
+   window.addEventListener('load', () => {
+      const music = document.getElementById('bgMusic');
+      const playPromise = music.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log('Musik diputar otomatis.');
+          })
+          .catch(error => {
+            console.log('Autoplay diblokir. Menunggu interaksi pengguna...');
+          });
+      }
+    });
 
   document.addEventListener("DOMContentLoaded", function () {
       const cards = document.querySelectorAll(".card");
