@@ -42,7 +42,7 @@
     }
 
     .invitation {
-      background: url('img/rian.png') no-repeat center center;
+      background: url('img/rian2.png') no-repeat center center;
       background-size: cover;
       display: flex;
       flex-direction: column;
@@ -465,6 +465,114 @@
   transition: all 0.6s ease-out;
 }
 
+
+
+
+.gift-section {
+  padding: 30px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin: 0px 0px 30px 0px;
+  border-radius: 20px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.gift-card {
+  background: linear-gradient(135deg, #d4d4d4, #b0b0b0);
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gift-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.gift-info, .gift-name {
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.gift-button {
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.gift-button:hover {
+  background-color: #444;
+}
+
+
+
+.gallery-section {
+  padding: 30px 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.gallery-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+
+
+
+
+
+
 .card.show {
   opacity: 1;
   transform: translateY(0);
@@ -510,9 +618,8 @@
   </style>
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="img/lagu.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
+  <audio id="bgMusic" loop>
+    <source src="img/lagu.mp3" type="audio/mpeg">
   </audio>
 <!-- Section Cover -->
 <div class="section invitation" id="cover">
@@ -583,6 +690,20 @@
     </div>
   </div>
 
+  <section class="gallery-section">
+    <h2 class="gallery-title">Gallery</h2>
+    <div class="gallery-grid">
+      <img src="img/rian1.png" alt="Galeri 1">
+      <img src="img/rian.png" alt="Galeri 2">
+      <img src="img/rian3.png" alt="Galeri 3">
+      <img src="img/rian4.png" alt="Galeri 4">
+      <img src="img/rian1.png" alt="Galeri 5">
+      <img src="img/rian.png" alt="Galeri 6">
+      <img src="img/rian3.png" alt="Galeri 7">
+      <img src="img/rian4.png" alt="Galeri 8">
+    </div>
+  </section>
+
   <div class="card konfirmasi-kehadiran hidden">
     <h3 style="margin-bottom: 30px;">RSVP</h3>
     <form id="rsvp-form" onsubmit="sendRSVP(event)">
@@ -608,6 +729,38 @@
     <h3 style="margin-top: 40px;">Q.S Ar-Rum Ayat 21</h3>
   </div>
 
+  <section class="gift-section">
+    <h2 class="section-title">🎁 Wedding Gift</h2>
+    <p class="section-desc">
+      Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami, dapat melalui :
+    </p>
+  
+    <div class="gift-card">
+      <div class="gift-header">
+        <h3>Wedding Gift</h3>
+        <span>Mandiri</span>
+      </div>
+      <p class="gift-info"><strong>No. Rekening</strong><br>03123456789</p>
+      <button class="gift-button" onclick="window.open('https://wa.me/6281234567890?text=Halo, saya sudah melakukan transfer.', '_blank')">
+        💌 Konfirmasi Via WA
+      </button>
+      <p class="gift-name"><strong>Atas Nama</strong><br>FULAN SYAHPUTRA</p>
+    </div>
+  
+    <div class="gift-card">
+      <div class="gift-header">
+        <h3>Wedding Gift</h3>
+        <span>BCA</span>
+      </div>
+      <p class="gift-info"><strong>No. Rekening</strong><br>03123456789</p>
+      <button class="gift-button" onclick="window.open('https://wa.me/6281234567890?text=Halo, saya sudah melakukan transfer.', '_blank')">
+        💌 Konfirmasi Via WA
+      </button>
+      <p class="gift-name"><strong>Atas Nama</strong><br>FULANAH PUTRI</p>
+    </div>
+  </section>
+  
+
   <div class="card ucapan-dan-doa hidden">
   
     <h3 style="margin-bottom: 20px;">Ucapan & Do'a</h3>
@@ -629,17 +782,17 @@
     <h2 class="arabic" style="margin-top: 30px;">وَعَلَيْكُمُ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
   </div>
   <div class="card akhir-card" style="margin:0px -20px -40px -20px">
-    <h3 style="font-size: 12px; font-family: Great Vibes; color: #fff;">
+    <h3 style="font-size: 12px; font-family: Great Vibes; color: #4d4d4d;">
       Design by: Arjuna Arrasyid
     </h3>
     <div class="social-icons" style="margin-top: 8px;">
-      <a href="https://instagram.com/junancok" target="_blank" style="margin: 0 10px; color: #fff;">
+      <a href="https://instagram.com/junancok" target="_blank" style="margin: 0 10px; color: #4d4d4d;">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="https://wa.me/+62881024677391" target="_blank" style="margin: 0 10px; color: #fff;">
+      <a href="https://wa.me/+62881024677391" target="_blank" style="margin: 0 10px; color: #4d4d4d;">
         <i class="fab fa-whatsapp"></i>
       </a>
-      <a href="https://facebook.com/" target="_blank" style="margin: 0 10px; color: #fff;">
+      <a href="https://facebook.com/" target="_blank" style="margin: 0 10px; color: #4d4d4d;">
         <i class="fab fa-facebook"></i>
       </a>
     </div>
@@ -651,6 +804,11 @@
 
 <script>
   function showInvitation() {
+
+    document.getElementById('showInvitation').addEventListener('click', function () {
+    const music = document.getElementById('bgMusic');
+    music.play();
+    });
     document.getElementById("cover").style.display = "none";
     document.getElementById("detail").classList.add("active");
     document.getElementById("copyright").classList.add("active");
